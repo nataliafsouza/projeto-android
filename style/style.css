@@ -1,0 +1,211 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+@font-face {
+    font-family: 'Android';
+    src: url('../fontes/idroid.otf') format('opentype');
+    font-weight: normal;
+}
+
+:root {
+    --cor1: #c5ebd6;
+    --cor2: #83e1ad;
+    --cor3: #3ddc84;
+    --cor4: #2fa866;
+    --cor5: #1a5c37;
+    --cor6: #063d1e;
+
+    --fonte-padrao: Arial, Helvetica, sans-serif;
+    --fonte-destaque:'Bebas Neue', cursive;
+    --fonte-android: 'android', cursive;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: var(--cor1);
+    color: black;
+    font-family: var(--fonte-padrao);
+}
+
+h1{
+    font-weight: normal;
+}
+
+h2{
+    font-weight: normal;
+}
+
+a.externo::after{
+    content: '\00A0\1F517';
+}
+
+header {
+    background-image: linear-gradient(to bottom, var(--cor3), var(--cor5));
+    color: white;  
+    min-width: 150px;  /*Tamanho mínimo e fixo que quero pro meu cabeçalho*/
+    text-align: center;
+    padding-top: 40px; /* Distãncia da minha borda*/
+    padding-bottom: 15px;
+}
+
+header > h1 {
+    color: white;
+    font-family: var(--fonte-destaque);
+    font-size: 3em;
+    margin-bottom: 20px;
+
+}
+
+header > p {
+    color: white;
+    font-family: var(--fonte-padrao);
+    font-size: 1.2em;
+    max-width: 500px; /*delimita o tamanho da minha caixa, e como tem cx, p/ centralizar usa o "margin: auto" */
+    padding-right: 10px;
+    padding-right: 10px;
+    margin: auto;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.205);
+}
+
+nav {
+    background-color: var(--cor5);
+    box-shadow: 5px 5px 7px 5px rgb(0 0 0 / 21%);
+    padding: 8px;
+}
+
+nav > a{
+    color: var(--cor1);
+    padding: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition-duration: .5s; /* tempo de duração da animação da transição*/
+}
+
+nav > a:hover{
+    background-color: var(--cor2);
+    color: var(--cor5);
+}
+
+main {
+    background-color: rgb(255, 255, 255);
+    max-width: 1000px;
+    min-width: 320px;
+    margin: auto;
+    padding: 20px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.418);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+main h1 {
+    color: var(--cor5);
+    font-family: var(--fonte-android);
+}
+
+main h2 {
+    background-image: linear-gradient(to right, rgb(105, 192, 144), rgba(255, 255, 255, 0));
+    color: var(--cor5);
+    font-family: var(--fonte-android);
+    border-radius: 8px;
+    text-indent: 30px;
+}
+
+main p{ /*comandos para formatação dos textos dentro dessa box*/
+    margin: 15px 0px; /* espaçamento entre paragrafos */
+    text-align: justify;    /* alinhamento do texto */
+    text-indent: 30px; /*Espaço onde começa primeira linha do Parágrafo */
+    line-height: 1.5em; /* espaçamento entre linha*/
+}
+
+main a{
+    color: var(--cor5);
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+main a:hover{
+    background-color: var(--cor4);
+    padding: 2px;
+    color: var(--cor6);
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+main strong{
+    color: var(--cor5);
+    font-weight: bolder;
+}
+
+main img{
+    width: 100%;
+}
+
+main img.pequena{
+    max-width: 350px; /* pode ser usada '%' tbm */
+    display: block; /*imagem por padrão não é um bloco, então preciso definir minha imagem como um bloco*/
+    margin: auto;/*uso esse comando para centralizar a imagem*/
+}
+
+div.video{
+    background-color: var(--cor5);
+    margin: 0px -20px 30px -20px; /*/ meu 0 inicial é para colar na borda lateral esquerda */
+    padding: 20px;
+    padding-bottom: 59%; /* esse valor faz com que o video crie as barras laterais pretas... ajustando vai diminuindo o espaço*/
+    position: relative;
+}
+
+div.video > iframe{
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%; /* essas configurações só se adaptaram aqui pq estou usando o padding-botton ali no div.video com % */
+    height: 90%;
+}
+
+
+aside{
+    background-color: var(--cor3);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+aside > h3{
+    background-color: var(--cor5);
+    color: white;
+    margin: -10px -10px 0px -10px; /* usei o -10px pq minha caixa estava dentro, com espaçamento, qdo coloco esse valor ela ocupa o espao de fora, é tipo outside*/
+    padding: 10px;
+    border-radius: 10px 10px 0px 0px; /*a ordem do arredondamento é: lateral superior esquerda, lateral superior direita, lateral inferior direita e lateral inferior esquerda */
+
+}
+
+aside > ul{
+    list-style-type: "\2714\00A0\00A0"; /*entre no emojipedia e pega o código sem o U+ na frente, e colar aqui, a barra invertida \ faz com que o navegador entenda e busque pelo emoji de Check (2714). Como estava muito próximo ao texto o simbolo, para dar mais espaço acrescentou \00A0 que o 00A0 representa o espaço. Mas esses comando do simbolo não é compatível com todo navegador */
+    list-style-position: inside;
+    columns: 2;
+    line-height: 1.5em;
+}
+
+footer{
+    background-color: var(--cor6);
+    color: white;
+    text-align: center;
+    font-size: 0.8em;
+    margin-top: 20px;
+    padding: 5px;
+}
+
+footer a{
+    color: white;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+footer a:hover{
+    text-decoration: underline;
+}
